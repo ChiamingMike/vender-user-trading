@@ -16,6 +16,7 @@ products = {
 'PRINTER' : [5,40],
 'PC'      : [12,100],
 'IPHONE'  : [10,150],
+'IPOD'    : [8,120],
 'TV'      : [2,200] }
 vender = People(0,products)
 
