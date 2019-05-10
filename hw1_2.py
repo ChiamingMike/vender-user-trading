@@ -9,7 +9,7 @@ class People:
             print(name,':',value[0],' --- ',value[1],'dollars for each one.' )
         if self.money != 0:
             print('Money: ' + str(self.money) + ' dollars.\n')
-    def trading(self,quantity,operator):
+    def trading(self,name,quantity,operator):
         self.money = int(self.money) + int(quantity) * int(self.products[name][1]) * int(operator)
 
 products = {
@@ -43,8 +43,8 @@ while True:
         elif name in user.products.keys():
             user.products[name][0] = int(user.products[name][0]) + int(quantity)
         vender.products[name][0] = int(vender.products[name][0]) - int(quantity)
-        user.trading(quantity,-1)
-        vender.trading(quantity,1)
+        user.trading(name,quantity,-1)
+        vender.trading(name,quantity,1)
         print('----------What you have----------')
         user.belongings()
         if user.money == 0 or user.money < products['PRINTER'][1]:
